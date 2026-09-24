@@ -14,5 +14,4 @@ lab1/
 ├── prediction.pdf          # Bản scan báo cáo tính toán và dự đoán trước khi thực nghiệm (Part B Calculation and Part C — Predictions)
 ├── Reflection.md           # Báo cáo tự đánh giá, rút kinh nghiệm và tổng kết bài học (Part 16)
 ├── results.csv             # Bảng kết quả truy vấn và đo lường định lượng (P@5, R@5, MRR)
-├── .gitignore              # Cấu hình bỏ qua file nháp (lab1_v2.ipynb), file cũ và bộ nhớ đệm
 └── README.md               # Tài liệu hướng dẫn và báo cáo chi tiết bài thực hành Lab 1
