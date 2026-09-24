@@ -11,7 +11,7 @@ Thư mục `lab01/` chứa toàn bộ mã nguồn, dữ liệu thực nghiệm v
 lab1/
 ├── experiments.ipynb       # Notebook chính: toàn bộ thực nghiệm từ Part D đến Part J 
 ├── implementation.py       # Module chứa các hàm tính toán cốt lõi (TF, IDF, TF-IDF, Cosine Similarity)
-├── prediction.md           # Báo cáo dự đoán trước khi thực nghiệm (Part C — Predictions)
+├── prediction.pdf          # Bản scan báo cáo tính toán và dự đoán trước khi thực nghiệm (Part B Calculation and Part C — Predictions)
 ├── Reflection.md           # Báo cáo tự đánh giá, rút kinh nghiệm và tổng kết bài học (Part 16)
 ├── results.csv             # Bảng kết quả truy vấn và đo lường định lượng (P@5, R@5, MRR)
 ├── .gitignore              # Cấu hình bỏ qua file nháp (lab1_v2.ipynb), file cũ và bộ nhớ đệm
