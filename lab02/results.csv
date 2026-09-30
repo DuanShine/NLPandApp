@@ -1,0 +1,16 @@
+EXPERIMENT 2 & 3: PERPLEXITY RESULTS
+Model,Train PPL,Valid PPL,Test PPL
+Bigram MLE,118.32035147581115,inf,inf
+Bigram Laplace,5486.155104638828,7076.6079860058635,7078.2422620762245
+Trigram MLE,9.913892629332977,inf,inf
+Trigram Laplace,50515.074307786854,84274.41228867004,83901.05359509615
+Unigram Laplace,1771.274681279595,1880.5907184976736,1872.7321862967692
+
+
+APPLICATION: NEXT-WORD PREDICTION
+Context,Top Predictions,Actual Next Word
+the cat,", (0.08), 's (0.06), box (0.06)",was
+natural language,"processing (0.43), . (0.43), speech (0.14)",processing
+machine learning,"and (0.14), , (0.10), to (0.08)",models
+one of the,"most (0.02), best (0.01), world (0.01)",most
+in the,"world (0.02), past (0.01), first (0.01)",world
