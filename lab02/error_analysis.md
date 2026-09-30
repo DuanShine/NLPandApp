@@ -1,45 +1,26 @@
-Category       Input Context       Prediction     Target Word    Confidence
---------------------------------------------------------------------------------
-Correct 1      climate change      .              impacts        0.2476    
-Correct 2      one of the          most           most           0.0196    
-Incorrect 1    the company         ’              has            0.1447    
-Incorrect 2    renewable energy    sources        sources        0.1231    
---------------------------------------------------------------------------------
+## Phân tích các trường hợp dự đoán sai
 
-#### 22.1. Nhóm các trường hợp dự đoán chính xác
+| Category | Input Context | Prediction | Target Word | Confidence |
+|---|---|---|---|---:|
+| Incorrect 1 | `climate change` | `.` | `impacts` | 0.2476 |
+| Incorrect 2 | `the company` | `’` | `has` | 0.1447 |
 
-**Trường hợp 1: Dự đoán trúng thuật ngữ có tính liên kết chặt chẽ**
+### Trường hợp 1: Dự đoán dấu câu thay vì từ nội dung
 
-- Ngữ cảnh đầu vào: `renewable energy`
-- Từ mô hình dự đoán: `sources`
-- Từ kỳ vọng: `sources`
-- Độ tự tin: `0.1231`
-- Phân tích nguyên nhân: Cụm từ năng lượng tái tạo đi kèm với chữ nguồn là một thuật ngữ chuẩn hóa xuất hiện với tần suất cao trong dữ liệu huấn luyện. Nhờ sự xuất hiện lặp lại của tổ hợp này, mô hình có nhiều cơ sở thống kê để ưu tiên từ `sources`. Điều này giúp hệ thống đưa ra dự đoán chính xác.
+- **Ngữ cảnh đầu vào:** `climate change`
+- **Từ mô hình dự đoán:** `.`
+- **Từ kỳ vọng:** `impacts`
+- **Độ tự tin:** `0.2476`
 
-**Trường hợp 2: Dự đoán đúng khuôn mẫu ngữ pháp cố định**
+**Phân tích:**  
+Cụm `climate change` có thể xuất hiện ở nhiều vị trí khác nhau trong văn bản, bao gồm cả vị trí gần cuối câu. Do dấu câu được giữ lại như một token riêng trong quá trình tiền xử lý, dấu chấm có thể xuất hiện với tần suất tương đối cao sau cụm từ này. Mô hình N-gram chỉ dựa trên tần suất xuất hiện của các từ trong ngữ cảnh ngắn nên không thể xác định được ý nghĩa của toàn bộ câu. Vì vậy, mô hình lựa chọn dấu chấm thay vì từ `impacts`.
 
-- Ngữ cảnh đầu vào: `one of the`
-- Từ mô hình dự đoán: `most`
-- Từ kỳ vọng: `most`
-- Độ tự tin: `0.0196`
-- Phân tích nguyên nhân: Đây là một cấu trúc ngữ pháp phổ biến trong tiếng Anh. Khi gặp chuỗi `one of the`, mô hình có thể dựa vào tần suất xuất hiện trong dữ liệu để nhận biết các từ thường đứng tiếp theo. Trong trường hợp này, `most` có xác suất cao hơn các lựa chọn khác nên mô hình đưa ra dự đoán chính xác.
+### Trường hợp 2: Dự đoán dấu nháy thay vì động từ
 
----
+- **Ngữ cảnh đầu vào:** `the company`
+- **Từ mô hình dự đoán:** `’`
+- **Từ kỳ vọng:** `has`
+- **Độ tự tin:** `0.1447`
 
-#### 22.2. Nhóm các trường hợp dự đoán sai
-
-**Trường hợp 3: Sai do thói quen ngắt câu và tác dụng phụ của bước tiền xử lý**
-
-- Ngữ cảnh đầu vào: `climate change`
-- Từ mô hình dự đoán: `.`
-- Từ kỳ vọng: `impacts`
-- Độ tự tin: `0.2476`
-- Phân tích nguyên nhân: Trong dữ liệu văn bản, cụm `climate change` có thể xuất hiện ở nhiều vị trí khác nhau, trong đó có những trường hợp đứng gần cuối câu. Do dấu câu được giữ lại như một token riêng, dấu chấm có thể xuất hiện với tần suất cao sau cụm từ này. Vì vậy, mô hình ưu tiên dấu chấm thay vì từ `impacts`.
-
-**Trường hợp 4: Sai do ảnh hưởng của dạng sở hữu cách**
-
-- Ngữ cảnh đầu vào: `the company`
-- Từ mô hình dự đoán: `'`
-- Từ kỳ vọng: `has`
-- Độ tự tin: `0.1447`
-- Phân tích nguyên nhân: Lỗi này xuất phát từ cách hệ thống xử lý dấu nháy trong quá trình tách từ. Trong dữ liệu tiếng Anh, dấu nháy có thể xuất hiện trong nhiều cấu trúc khác nhau, đặc biệt là các dạng sở hữu cách. Vì vậy, mô hình có thể học được mối liên hệ khá mạnh giữa danh từ và dấu nháy. Với ngữ cảnh chỉ gồm hai từ `the company`, thông tin chưa đủ để mô hình xác định chắc chắn rằng từ tiếp theo phải là một động từ như `has`, dẫn đến việc lựa chọn dấu nháy.
+**Phân tích:**  
+Lỗi này liên quan đến cách dấu nháy được xử lý trong quá trình tách từ. Trong văn bản tiếng Anh, dấu nháy có thể xuất hiện trong nhiều cấu trúc khác nhau, đặc biệt là các dạng sở hữu cách. Do đó, mô hình có thể học được mối liên hệ giữa danh từ và dấu nháy từ dữ liệu huấn luyện. Với ngữ cảnh chỉ gồm hai từ `the company`, Bigram không có đủ thông tin để phân biệt các cấu trúc có thể xuất hiện phía sau. Vì vậy, mô hình lựa chọn dấu nháy thay vì động từ `has`.
