@@ -13,7 +13,7 @@ Nội dung chính của Lab 02 gồm ba phần:
 Thư mục `lab02/` chứa toàn bộ mã nguồn, dữ liệu thực nghiệm và các tài liệu báo cáo của bài thực hành:
 
 ```text
-w2/
+lab02/
 ├── experiment.ipynb      # Notebook chính: huấn luyện mô hình, tính Perplexity và chạy các ứng dụng
 ├── ngrams_lm.py          # Module triển khai lớp N-gram Language Model
 ├── caculator.pdf         # Bản scan các bài tính toán tay về xác suất và Perplexity
