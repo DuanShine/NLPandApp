@@ -11,7 +11,8 @@ Nội dung chính của Lab 03 gồm ba phần:
 ## Cấu trúc thư mục Lab 03
 Thư mục `w3/` chứa toàn bộ mã nguồn, dữ liệu thực nghiệm và tài liệu báo cáo của bài thực hành:
 
-w3/
+```text
+lab03/
 ├── README.md             # Báo cáo tổng quan, kết quả thực nghiệm và hướng dẫn sử dụng
 ├── calculations.md       # Tính toán chi tiết phép toán Analogy và phân tích dung lượng bộ nhớ
 ├── prediction.md         # Phân tích mẫu huấn luyện CBOW vs Skip-gram và thiết lập giả thuyết
