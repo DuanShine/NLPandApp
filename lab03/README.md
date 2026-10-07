@@ -20,4 +20,4 @@ lab03/
 ├── word_embedding.ipynb  # Notebook thực nghiệm hoàn chỉnh từ Mục 10 đến Mục 27
 ├── results.csv           # Dữ liệu định lượng kết quả đo lường tương đồng từ vựng
 ├── error_analysis.md     # Bảng phân tích chuyên sâu các trường hợp đúng và sai/bất ngờ
-└── reflection.md         # Bảng so sánh 4 thế hệ biểu diễn và trả lời 6 câu hỏi vấn đáp
+└── reflection.md         # Bảng so sánh 4 thế hệ biểu diễn và trả lời random 1 trong 6 câu hỏi vấn đáp
