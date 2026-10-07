@@ -29,7 +29,7 @@
 
 ---
 
-## 2. Trả lời 6 câu hỏi kiểm tra vấn đáp cá nhân (Individual Learning Check — Mục 29)
+## 2. Trả lời  random 1 trong 6 câu hỏi kiểm tra vấn đáp cá nhân (Individual Learning Check — Mục 29)
 
 **Câu 1: Distributional Hypothesis là gì?**
 * **Trả lời:** Giả thuyết phân bố do Zellig Harris đề xuất và J.R. Firth đúc kết qua câu *"You shall know a word by the company it keeps"*, khẳng định rằng các từ thường xuyên xuất hiện trong những ngữ cảnh phân bố giống nhau thì sẽ mang ý nghĩa ngữ nghĩa tương đồng nhau.
@@ -37,9 +37,9 @@
 
 ## 3. Tuyên bố sử dụng AI (AI Assistance Statement — Mục 28)
 
-Tuân thủ nghiêm ngặt quy định liêm chính học thuật tại Mục 28 (AI Policy) thuộc ĐHQGHN:
+Tuân thủ nghiêm ngặt quy định liêm chính học thuật tại Mục 28 (AI Policy):
 
-* **Công cụ hỗ trợ:** Google Antigravity Assistant (Gemini 3.8 Flash).
+* **Công cụ hỗ trợ:** Google Antigravity Assistant (Gemini 3.1 Pro).
 * **Mục đích:** Hỗ trợ gợi ý cấu trúc trình bày bảng so sánh, rà soát công thức định dạng Markdown và kiểm tra tính hợp lý của các hạng mục lý thuyết.
 * **Nội dung do AI gợi ý:** Khung bảng đối chiếu đặc trưng các thế hệ biểu diễn ngôn ngữ và cấu trúc dàn ý tổng quan cho phần suy ngẫm.
 * **Nội dung sinh viên thực hiện & tinh chỉnh:** Toàn bộ quá trình tính toán đại số trong bài tập Analogy, các tập huấn luyện cho câu *"the cat eats fish"*, bài phân tích định tính về nguyên nhân gây lỗi mô hình, cùng toàn bộ phần lập luận chi tiết cho 6 câu hỏi vấn đáp cá nhân đều do sinh viên tự nghiên cứu, biên soạn hoàn toàn bằng văn phong độc lập và đối chiếu thực nghiệm.
