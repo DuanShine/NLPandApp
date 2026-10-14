@@ -1,0 +1,4 @@
+Representation,Classifier,Accuracy,Precision,Recall,F1
+TF-IDF,Logistic Regression,0.8779,0.8688,0.8875,0.8781
+Avg Word2Vec,Logistic Regression,0.8416,0.8344,0.8488,0.8415
+TF-IDF,Linear SVM,0.8813,0.8732,0.8897,0.8814
