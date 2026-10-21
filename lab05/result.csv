@@ -1,0 +1,5 @@
+Model,Representation,Parameters,Training time,Epochs,Sequence length,Vocabulary size,Accuracy,Precision,Recall,F1
+Logistic Regression,TF-IDF,N/A,1.62s,N/A,Full,20000,0.8836,0.8836,0.8836,0.8836
+Vanilla RNN,Embedding,"1,288,450",5.66s,3,100,20000,0.5182,0.522,0.5182,0.4966
+LSTM,Embedding,"1,313,410",6.10s,3,100,20000,0.535,0.5355,0.535,0.5332
+GRU,Embedding,"1,305,090",6.12s,3,100,20000,0.6819,0.6821,0.6819,0.6819
