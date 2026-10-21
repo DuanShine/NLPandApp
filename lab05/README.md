@@ -19,7 +19,7 @@ Nội dung thực nghiệm bao gồm tiền xử lý chuỗi bằng Padding và 
    Đồng thời, hiểu cách sử dụng trạng thái cuối chuỗi để dự đoán nhãn:
 
    $$
-   \hat{y} = \operatorname{softmax}(W_{hy}\vec{h}_T + \vec{b}_y)
+   \hat{y} = \mathrm{softmax}(W_{hy}\vec{h}_T + \vec{b}_y)
    $$
 
 3. **LO3 — Word Order Sensitivity:** Giải thích khả năng xử lý thứ tự từ của RNN qua các ví dụ như `dog bites man` và `man bites dog`, cũng như ảnh hưởng của cấu trúc phủ định như `not like`.
