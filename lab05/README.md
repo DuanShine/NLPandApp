@@ -10,9 +10,25 @@ Nội dung thực nghiệm bao gồm tiền xử lý chuỗi bằng Padding và 
 
 1. **LO1 — Sequence Modeling:** Phân biệt cách biểu diễn văn bản bằng Bag-of-Words, Word2Vec và các mô hình xử lý chuỗi dựa trên trạng thái ẩn.
 
-2. **LO2 — RNN Computation Graph:** Hiểu và tính toán quá trình cập nhật trạng thái ẩn của RNN: $\vec{h}_t=\tanh(W_{xh}\vec{x}_t+W_{hh}\vec{h}_{t-1}+\vec{b}_h)$. Đồng thời, hiểu cách sử dụng trạng thái cuối chuỗi để dự đoán nhãn: $\hat{y}=\text{softmax}(W_{hy}\vec{h}_T+\vec{b}_y)$.
-3. **LO3 — Word Order Sensitivity:** Giải thích khả năng xử lý thứ tự từ của RNN thông qua các ví dụ như "dog bites man" và "man bites dog", cũng như ảnh hưởng của cấu trúc phủ định như "not like".
-4. **LO4 — Vanishing and Exploding Gradients:** Giải thích nguyên nhân gây ra hiện tượng triệt tiêu và bùng nổ gradient thông qua tích các Jacobian trong thuật toán Backpropagation Through Time: $\prod_{k=t+1}^T\frac{\partial\vec{h}_k}{\partial\vec{h}_{k-1}}$.
+2. **LO2 — RNN Computation Graph:** Hiểu và tính toán quá trình cập nhật trạng thái ẩn của RNN:
+
+   $$
+   \vec{h}_t = \tanh(W_{xh}\vec{x}_t + W_{hh}\vec{h}_{t-1} + \vec{b}_h)
+   $$
+
+   Đồng thời, hiểu cách sử dụng trạng thái cuối chuỗi để dự đoán nhãn:
+
+   $$
+   \hat{y} = \operatorname{softmax}(W_{hy}\vec{h}_T + \vec{b}_y)
+   $$
+
+3. **LO3 — Word Order Sensitivity:** Giải thích khả năng xử lý thứ tự từ của RNN qua các ví dụ như `dog bites man` và `man bites dog`, cũng như ảnh hưởng của cấu trúc phủ định như `not like`.
+
+4. **LO4 — Vanishing and Exploding Gradients:** Giải thích nguyên nhân gây ra hiện tượng triệt tiêu và bùng nổ gradient thông qua tích các Jacobian trong thuật toán Backpropagation Through Time:
+
+   $$
+   \prod_{k=t+1}^{T} \frac{\partial \vec{h}_k}{\partial \vec{h}_{k-1}}
+   $$
 5. **LO5 — LSTM Gating Mechanism:** Tìm hiểu ba cổng Forget Gate, Input Gate và Output Gate, cùng Cell State giúp duy trì và điều chỉnh thông tin qua nhiều bước thời gian.
 
 6. **LO6 — GRU Simplification:** So sánh kiến trúc GRU với LSTM, tập trung vào Update Gate, Reset Gate và cơ chế cập nhật trạng thái ẩn mà không cần Cell State riêng biệt.
