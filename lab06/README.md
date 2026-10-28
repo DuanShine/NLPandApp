@@ -36,13 +36,13 @@ Quy trình nghiên cứu và thực nghiệm trong Lab 06 gồm:
 
 ## 3. Cấu trúc thư mục nộp bài (Deliverables)
 
-Thư mục `w6/` bao gồm đầy đủ **10 tệp tin** theo đúng quy định tại **Mục 32. Deliverables**:
+Thư mục `lab06/` bao gồm đầy đủ **10 tệp tin** theo đúng quy định tại **Mục 32. Deliverables**:
 
 ```
 w6/
 ├── README.md                 # Báo cáo tổng quan, kết quả thực nghiệm và hướng dẫn sử dụng
-├── calculations.md           # Lời giải chi tiết 9 bài toán giải tích (Scores, Softmax, Context, Scaling, Temperature, Stable Softmax, Self-Attention, O(T^2))
-├── prediction.md             # Thiết lập 5 giả thuyết nghiên cứu định lượng kèm lý giải cơ chế và mức độ tin cậy
+├── calculations.pdf          # Lời giải chi tiết 9 bài toán giải tích (Scores, Softmax, Context, Scaling, Temperature, Stable Softmax, Self-Attention, O(T^2))
+├── prediction.pdf            # Thiết lập 5 giả thuyết nghiên cứu định lượng kèm lý giải cơ chế và mức độ tin cậy
 ├── attention_numpy.py        # Module thuần NumPy cài đặt Stable Softmax, Scaled Dot-Product Attention và Self-Attention (không comment)
 ├── self_attention.ipynb      # Notebook thực nghiệm hoàn chỉnh từ Mục 4 đến Mục 26 (code sạch, không comment, markdown học thuật)
 ├── results.csv               # Bảng số liệu thực nghiệm định lượng chi tiết của các mô hình
