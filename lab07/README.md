@@ -37,13 +37,13 @@ Quy trình nghiên cứu và thực nghiệm trong Lab 07 gồm:
 
 ## 3. Cấu trúc thư mục nộp bài (Deliverables)
 
-Thư mục `w7/` bao gồm đầy đủ **13 tệp tin** theo đúng quy định tại **Mục 32. Deliverables**:
+Thư mục `lab07/` bao gồm đầy đủ **13 tệp tin** theo đúng quy định tại **Mục 32. Deliverables**:
 
 ```
 w7/
 ├── README.md                           # Báo cáo tổng quan, kết quả thực nghiệm và hướng dẫn sử dụng
-├── calculations.md                     # Lời giải ngắn gọn, chuẩn xác 7 bài tập giải tích (Attention head, Multi-head, PE, FFN, Residual, Shapes, Complexity)
-├── prediction.md                       # Thiết lập 6 giả thuyết nghiên cứu định lượng kèm lý giải cơ chế và mức độ tin cậy
+├── calculations.pdf                    # Lời giải ngắn gọn, chuẩn xác 7 bài tập giải tích (Attention head, Multi-head, PE, FFN, Residual, Shapes, Complexity)
+├── prediction.pdf                      # Thiết lập 6 giả thuyết nghiên cứu định lượng kèm lý giải cơ chế và mức độ tin cậy
 ├── transformer_block.py                # Module PyTorch tự cài đặt Multi-Head Attention, FFN, TransformerBlock và Classifier (không comment)
 ├── positional_encoding.py              # Module cài đặt Sinusoidal Positional Encoding thuần NumPy và PyTorch (không comment)
 ├── transformer_classification.ipynb    # Notebook thực nghiệm hoàn chỉnh từ Mục 11 đến Mục 26 (code sạch, không comment, markdown học thuật)
