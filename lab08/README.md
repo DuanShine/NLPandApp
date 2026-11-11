@@ -44,8 +44,8 @@ Thư mục `lab08/` bao gồm đầy đủ các tệp tin theo đúng quy địn
 ```
 lab08/
 ├── README.md                     # Báo cáo tổng quan, thiết lập, kết quả thực nghiệm và hướng dẫn chạy
-├── calculations.md               # Lời giải tay: MLM loss (Exercise 1) và tokenization "The cats are playing." (Exercise 2)
-├── prediction.md                 # 3 dự đoán trước thí nghiệm (pretrained vs scratch, frozen vs fine-tune, 10% data)
+├── calculations.pdf              # Lời giải tay: MLM loss (Exercise 1) và tokenization "The cats are playing." (Exercise 2)
+├── prediction.pdf                # 3 dự đoán trước thí nghiệm (pretrained vs scratch, frozen vs fine-tune, 10% data)
 ├── tokenization.ipynb            # Tokenizer DistilBERT: token sequence, token IDs, special tokens, attention mask, padding, truncation
 ├── pretrained_classification.py  # Module: load dữ liệu, pretrained encoder + head [CLS], Transformer from scratch, train/eval, vẽ hình
 ├── fine_tuning.ipynb             # Notebook chạy Exp 1–5, metrics, confusion matrix, confidence & error analysis, reproducibility
