@@ -46,8 +46,8 @@ Thư mục `lab09/` bao gồm đầy đủ các tệp tin theo đúng quy địn
 ```
 lab09/
 ├── README.md                     # Báo cáo tổng quan, mục tiêu học tập và cấu trúc bài nộp
-├── calculations.md               # Lời giải tay: BIO "Elon Musk founded SpaceX in California." (Ex 1), entity boundary "University of California Berkeley" (Ex 2), shape H / Z / Y (Ex 3)
-├── prediction.md                 # 3 dự đoán trước thí nghiệm (Transformer vs word-feature baseline, entity dài vs ngắn, entity hiếm)
+├── calculations.pdf              # Lời giải tay: BIO "Elon Musk founded SpaceX in California." (Ex 1), entity boundary "University of California Berkeley" (Ex 2), shape H / Z / Y (Ex 3)
+├── prediction.pdf                # 3 dự đoán trước thí nghiệm (Transformer vs word-feature baseline, entity dài vs ngắn, entity hiếm)
 ├── baseline_ner.py               # Baseline: token features + Logistic Regression, extract_entities, compute_entity_metrics, compute_prf
 ├── tokenizer_alignment.ipynb     # Label alignment Strategy A (-100) vs Strategy B, kiểm chứng ignore_index, Exp 1: Tokenization analysis 20 câu
 ├── ner_finetuning.ipynb          # BERT token classifier, shape check, Exp 2–5, context analysis, mini Information Extraction
