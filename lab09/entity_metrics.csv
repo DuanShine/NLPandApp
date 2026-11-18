@@ -1,17 +1,17 @@
-
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
- "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
-  <head>
-    <title>503 Backend.max_conn reached</title>
-  </head>
-  <body>
-    <h1>Error 503 Backend.max_conn reached</h1>
-    <p>Backend.max_conn reached</p>
-    <h3>Error 54113</h3>
-    <p>Details: cache-hkg-vhhh8650068-HKG 1795015850 2897896272</p>
-    <hr>
-    <p>Varnish cache server</p>
-  </body>
-</html>
+Breakdown,Category,Model,Support,Precision,Recall,F1
+Entity Type,PER,Pretrained BERT,1617,0.9584,0.9641,0.9612
+Entity Type,LOC,Pretrained BERT,1668,0.9245,0.9311,0.9278
+Entity Type,ORG,Pretrained BERT,1661,0.8812,0.8928,0.8870
+Entity Type,MISC,Pretrained BERT,702,0.8165,0.8248,0.8206
+Entity Type,PER,Baseline LR,1617,0.7980,0.7740,0.7858
+Entity Type,LOC,Baseline LR,1668,0.7820,0.7610,0.7714
+Entity Type,ORG,Baseline LR,1661,0.6840,0.6510,0.6671
+Entity Type,MISC,Baseline LR,702,0.6620,0.6350,0.6482
+Entity Length,1 token,Pretrained BERT,3580,0.9340,0.9395,0.9367
+Entity Length,2 tokens,Pretrained BERT,1510,0.9025,0.9110,0.9067
+Entity Length,3 tokens,Pretrained BERT,395,0.8410,0.8520,0.8465
+Entity Length,4+ tokens,Pretrained BERT,163,0.7420,0.7580,0.7499
+Entity Length,1 token,Baseline LR,3580,0.7910,0.7720,0.7814
+Entity Length,2 tokens,Baseline LR,1510,0.7040,0.6780,0.6908
+Entity Length,3 tokens,Baseline LR,395,0.5820,0.5490,0.5650
+Entity Length,4+ tokens,Baseline LR,163,0.4450,0.4120,0.4279
