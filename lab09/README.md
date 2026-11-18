@@ -11,14 +11,14 @@ Trong **LAB 09**, chúng ta giữ nguyên backbone pretrained nhưng thay đổi
 $$X = (x_1, \dots, x_T) \to Y = (y_1, \dots, y_T)$$
 
 Bài toán cụ thể là **Named Entity Recognition (NER)** trên **CoNLL-2003** với 4 loại thực thể `PER`, `ORG`, `LOC`, `MISC` theo lược đồ **BIO** (`B-X`, `I-X`, `O`). Classification head tuyến tính được áp dụng lên **mọi vị trí token** của hidden states:
-$$H \in \mathbb{R}^{B \times T \times d} \xrightarrow{\;Z = HW + b\;} Z \in \mathbb{R}^{B \times T \times C}$$
+$$H \in \mathbb{R}^{B \times T \times d} \xrightarrow{Z = HW + b} Z \in \mathbb{R}^{B \times T \times C}$$
 
 Vấn đề kỹ thuật trung tâm là **label alignment**: dataset NER gán nhãn theo *word*, trong khi Transformer hoạt động trên *subword token IDs*. Lab này sử dụng **Strategy A (First-subword)** làm chiến lược chính — chỉ subword đầu tiên của mỗi từ mang nhãn thật, các subword sau và special tokens nhận `-100` (IGNORE) nên không đóng góp vào loss:
-$$\mathcal{L} = -\sum_{i \,:\, y_i \neq \text{IGNORE}} \log P(y_i \mid x)$$
+$$\mathcal{L} = -\sum_{i : y_i \neq \text{IGNORE}} \log P(y_i \mid x)$$
 và đối chiếu với **Strategy B (Label propagation `B-X → I-X`)**.
 
 Quy trình nghiên cứu và thực nghiệm trong Lab 09 gồm:
-> Tính tay BIO tagging (Exercise 1), entity boundary "University of California Berkeley" (Exercise 2) và tensor shape $H, Z, Y$ (Exercise 3) → Thiết lập 3 dự đoán trước thí nghiệm → Cài đặt label alignment với `word_ids()` (Strategy A vs B) và kiểm chứng `ignore_index=-100` → Baseline Token features + Logistic Regression → Pretrained BERT token classifier → Exp 1: Tokenization analysis trên 20 câu (tỉ lệ $R = \#\text{subword tokens} / \#\text{words}$) → Exp 2: Baseline vs Pretrained Transformer → Exp 3: Token-level vs Entity-level evaluation → Exp 4: Phân tích theo loại thực thể PER / ORG / LOC / MISC → Exp 5: Phân tích theo độ dài thực thể 1 / 2 / 3 / 4+ tokens → Exp 6: Error analysis (FP / FN / boundary errors) → Context analysis (cùng surface form, khác entity type) → Mini Information Extraction trên 30 câu tin tức → Reflection và cầu nối sang LAB 10 (Extractive Question Answering).
+> Tính tay BIO tagging (Exercise 1), entity boundary "University of California Berkeley" (Exercise 2) và tensor shape $H, Z, Y$ (Exercise 3) → Thiết lập 3 dự đoán trước thí nghiệm → Cài đặt label alignment với `word_ids()` (Strategy A vs B) và kiểm chứng `ignore_index=-100` → Baseline Token features + Logistic Regression → Pretrained BERT token classifier → Exp 1: Tokenization analysis trên 20 câu (tỉ lệ $R = N_{\text{subword}} / N_{\text{words}}$) → Exp 2: Baseline vs Pretrained Transformer → Exp 3: Token-level vs Entity-level evaluation → Exp 4: Phân tích theo loại thực thể PER / ORG / LOC / MISC → Exp 5: Phân tích theo độ dài thực thể 1 / 2 / 3 / 4+ tokens → Exp 6: Error analysis (FP / FN / boundary errors) → Context analysis (cùng surface form, khác entity type) → Mini Information Extraction trên 30 câu tin tức → Reflection và cầu nối sang LAB 10 (Extractive Question Answering).
 
 ---
 
@@ -46,8 +46,8 @@ Thư mục `lab09/` bao gồm đầy đủ các tệp tin theo đúng quy địn
 ```
 lab09/
 ├── README.md                     # Báo cáo tổng quan, mục tiêu học tập và cấu trúc bài nộp
-├── calculations.pdf              # Lời giải tay: BIO "Elon Musk founded SpaceX in California." (Ex 1), entity boundary "University of California Berkeley" (Ex 2), shape H / Z / Y (Ex 3)
-├── prediction.pdf                # 3 dự đoán trước thí nghiệm (Transformer vs word-feature baseline, entity dài vs ngắn, entity hiếm)
+├── calculations.md               # Lời giải tay: BIO "Elon Musk founded SpaceX in California." (Ex 1), entity boundary "University of California Berkeley" (Ex 2), shape H / Z / Y (Ex 3)
+├── prediction.md                 # 3 dự đoán trước thí nghiệm (Transformer vs word-feature baseline, entity dài vs ngắn, entity hiếm)
 ├── baseline_ner.py               # Baseline: token features + Logistic Regression, extract_entities, compute_entity_metrics, compute_prf
 ├── tokenizer_alignment.ipynb     # Label alignment Strategy A (-100) vs Strategy B, kiểm chứng ignore_index, Exp 1: Tokenization analysis 20 câu
 ├── ner_finetuning.ipynb          # BERT token classifier, shape check, Exp 2–5, context analysis, mini Information Extraction
