@@ -51,8 +51,8 @@ Thư mục `lab10/` bao gồm đầy đủ các tệp tin theo đúng quy địn
 ```
 lab10/
 ├── README.md                     # Báo cáo tổng quan, mục tiêu học tập và cấu trúc bài nộp
-├── calculations.md               # Lời giải tay: start / end (Ex 1), start loss -log(0.60) (Ex 2), character span → token span của "Paris" (Ex 3)
-├── prediction.md                 # 4 dự đoán trước thí nghiệm (lexical distractor, độ dài answer, context nhiễu, đảo thứ tự câu)
+├── calculations.pdf              # Lời giải tay: start / end (Ex 1), start loss -log(0.60) (Ex 2), character span → token span của "Paris" (Ex 3)
+├── prediction.pdf                # 4 dự đoán trước thí nghiệm (lexical distractor, độ dài answer, context nhiễu, đảo thứ tự câu)
 ├── tokenizer_alignment.ipynb     # BertTokenizerFast + offset_mapping, align_answer_to_tokens, 4 edge cases, sliding window với stride
 ├── qa_model.py                   # BertForSpanQA (start / end heads), compute_qa_loss, extract_answer_span, normalize_answer, EM, token F1
 ├── qa_finetuning.ipynb           # Exp 1–5: context length, learning curves, EM vs F1, lexical vs paraphrase, answer length, Document QA demo
