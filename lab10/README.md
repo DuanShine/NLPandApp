@@ -9,10 +9,16 @@ LAB 08 và LAB 09 đã sử dụng cùng một pretrained Transformer nhưng tha
 - **LAB 09 (Token Classification / NER):** Classification head được áp dụng lên **mọi token** để dự đoán một nhãn BIO cho từng vị trí: $X \to Y = (y_1, \dots, y_T)$.
 
 Trong **LAB 10**, prediction head tiếp tục thay đổi sang **Span Prediction**. Model nhận cặp câu hỏi và ngữ cảnh, sau đó dự đoán vị trí bắt đầu và kết thúc của đáp án nằm sẵn trong context:
-$$(Q, C) \to (\text{start}, \text{end}), \qquad A = C_{i:j}, \quad i \le j$$
+
+```math
+(Q, C) \to (\text{start}, \text{end}), \qquad A = C_{i:j}, \quad i \le j
+```
 
 Bài toán cụ thể là **Extractive Question Answering** trên **SQuAD** (Stanford Question Answering Dataset). Input có dạng `[CLS] question [SEP] context [SEP]`; hidden states được đưa qua hai classifier tuyến tính độc lập để sinh phân phối $P_{\text{start}}(i)$ và $P_{\text{end}}(j)$ trên các token. Hàm mất mát là trung bình của hai cross-entropy:
-$$\mathcal{L} = \frac{\mathcal{L}_{\text{start}} + \mathcal{L}_{\text{end}}}{2}, \qquad \mathcal{L}_{\text{start}} = -\log P_{\text{start}}(i), \quad \mathcal{L}_{\text{end}} = -\log P_{\text{end}}(j)$$
+
+```math
+\mathcal{L} = \frac{\mathcal{L}_{\text{start}} + \mathcal{L}_{\text{end}}}{2}, \qquad \mathcal{L}_{\text{start}} = -\log P_{\text{start}}(i), \quad \mathcal{L}_{\text{end}} = -\log P_{\text{end}}(j)
+```
 
 Vấn đề kỹ thuật trung tâm là **offset mapping**: SQuAD cung cấp `answer_start` theo *character index*, trong khi Transformer làm việc trên *token index*. Lab này dùng `BertTokenizerFast` với `return_offsets_mapping=True` để ánh xạ character span của đáp án sang `(start_token, end_token)`, kết hợp `truncation="only_second"` và **sliding window** (`stride`) để xử lý context dài hơn `max_length` mà không đánh mất đáp án ở ranh giới cắt.
 
@@ -29,7 +35,7 @@ Quy trình nghiên cứu và thực nghiệm trong Lab 10 gồm:
 4. **LO4 — QA Tokenization:** Hiểu cách ghép question và context thành `[CLS] question [SEP] context [SEP]`, vai trò của `token_type_ids` và không giả định mọi Transformer đều dùng chúng.
 5. **LO5 — Offset Mapping:** Xử lý `offset_mapping` và phân biệt character index, word index, token index.
 6. **LO6 — Character Span → Token Span:** Ánh xạ `answer_start` / `answer_end` sang `start_token` / `end_token`, kể cả khi đáp án bắt đầu hoặc kết thúc giữa subword, bị truncation hoặc nằm ngoài window.
-7. **LO7 — Start / End Loss:** Tính $\mathcal{L}_{\text{start}}$, $\mathcal{L}_{\text{end}}$ và giải thích vì sao cần hai prediction độc lập.
+7. **LO7 — Start / End Loss:** Tính $`\mathcal{L}_{\text{start}}`$, $`\mathcal{L}_{\text{end}}`$ và giải thích vì sao cần hai prediction độc lập.
 8. **LO8 — Fine-tuning cho QA:** Fine-tune pretrained Transformer với start / end classifier và theo dõi learning curves.
 9. **LO9 — Exact Match & F1:** Đánh giá bằng EM (khớp hoàn toàn sau normalization) và token-level F1 (mức độ overlap).
 10. **LO10 — Error Analysis:** Phân tích lỗi wrong start, wrong end, boundary, no answer và distractor context; thống kê #wrong start so với #wrong end.
